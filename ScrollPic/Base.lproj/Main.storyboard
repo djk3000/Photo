@@ -1,24 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TkA-ad-RqL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollPic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="vg8-ZI-gZL">
+                                <rect key="frame" x="39.5" y="88" width="335" height="470"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSl-HZ-uhq">
+                                        <rect key="frame" x="10" y="10" width="355" height="450"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Dat-MX-AJ5" appends="YES" id="aeK-GI-LPF"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nSl-HZ-uhq" firstAttribute="centerX" secondItem="vg8-ZI-gZL" secondAttribute="centerX" id="DGL-l3-ZlV"/>
+                                    <constraint firstItem="nSl-HZ-uhq" firstAttribute="centerY" secondItem="vg8-ZI-gZL" secondAttribute="centerY" id="WoI-Vd-lMj"/>
+                                    <constraint firstItem="nSl-HZ-uhq" firstAttribute="top" secondItem="IIu-Yy-8in" secondAttribute="top" constant="10" id="lV2-lF-QRH"/>
+                                    <constraint firstAttribute="trailing" secondItem="nSl-HZ-uhq" secondAttribute="trailing" constant="10" id="oGU-YA-gEv"/>
+                                    <constraint firstItem="nSl-HZ-uhq" firstAttribute="leading" secondItem="IIu-Yy-8in" secondAttribute="leading" constant="10" id="tTQ-FF-VfY"/>
+                                    <constraint firstAttribute="bottom" secondItem="nSl-HZ-uhq" secondAttribute="bottom" constant="10" id="ymE-uK-3j7"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="gQg-pl-3IY"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="IIu-Yy-8in"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ik7-sM-Mne"/>
+                                </connections>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="intensity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dv-Vr-lIf">
+                                <rect key="frame" x="20" y="660" width="65" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VzS-wx-Bfw">
+                                <rect key="frame" x="103" y="660" width="293" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="intensity:" destination="BYZ-38-t0r" eventType="valueChanged" id="DRH-Kl-Dkm"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKd-9k-cqN">
+                                <rect key="frame" x="294" y="736" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMs-TI-NdN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDq-Dk-aKg">
+                                <rect key="frame" x="20" y="736" width="150" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change Filiter"/>
+                                <connections>
+                                    <action selector="changeFiliter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H8f-ia-CWc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vg8-ZI-gZL" secondAttribute="trailing" constant="39.5" id="FUS-1N-qUJ"/>
+                            <constraint firstItem="vg8-ZI-gZL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bK7-5n-7Wk"/>
+                            <constraint firstItem="vg8-ZI-gZL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lfa-Bb-4Ia"/>
+                            <constraint firstAttribute="bottom" secondItem="vg8-ZI-gZL" secondAttribute="bottom" constant="338" id="rr3-7c-pzP"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Cb7-cR-ZJT"/>
+                    <connections>
+                        <outlet property="imageView" destination="nSl-HZ-uhq" id="deY-Fa-YTr"/>
+                        <outlet property="scrollView" destination="vg8-ZI-gZL" id="i6d-Gf-g5C"/>
+                        <outlet property="slider" destination="VzS-wx-Bfw" id="ery-fb-LXd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Dat-MX-AJ5">
+                    <connections>
+                        <action selector="tapImageView:" destination="BYZ-38-t0r" id="Ruy-5s-bsS"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="83.705357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x4g-9M-gCX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TkA-ad-RqL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="78I-Vd-u78">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6gY-fQ-OKj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pyF-Py-kYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
